@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<body>
+    <form>
+        <table border="10", class="main-table">
+            <tr>
+                <td>
+                    <input type="text" name="textboxlength5" maxlength="5"><br>
+                    Checkbox1 <input type="checkbox" required><br>
+                    Radio1<input type="radio"><br>
+                    <td>
+                        Checkbox2 <input type="checkbox" required><br>
+                        Time: <input type="datetime-local"><br>
+                    </td>
+                </td\>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="submit"><br>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+{% endblock %}

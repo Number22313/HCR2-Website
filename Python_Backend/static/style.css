@@ -1,0 +1,43 @@
+/* filler */
+
+.main-table
+{
+    text-align: center;
+}
+
+header
+{
+    font-size: medium;
+    color: crimson;
+}
+
+body
+{
+    font-family:"Arial";
+    font-size: medium;
+}
+
+footer
+{
+    font-family:"Calibri";
+    font-size: xx-small;
+    color: blue;
+}
+
+input[type="submit"]
+{
+    color: darkslategray;
+    background-color: aqua;
+    padding: 3%;
+    padding-right: 20%;
+    padding-left: 20%;
+    font-size: large;
+    border-color: blue;
+    border-radius: 5%;
+}
+
+[type="submit"]:hover
+{
+    color: darkslategray;
+    background-color: coral;
+}
