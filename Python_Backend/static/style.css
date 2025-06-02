@@ -1,10 +1,5 @@
 /* filler */
 
-.main-table
-{
-    text-align: center;
-}
-
 header
 {
     font-size: medium;
@@ -15,13 +10,15 @@ body
 {
     font-family:"Arial";
     font-size: medium;
+    color: white;
+    background-color: darkslategray;
 }
 
 footer
 {
     font-family:"Calibri";
-    font-size: xx-small;
-    color: blue;
+    font-size: x-small;
+    color: red;
 }
 
 input[type="submit"]
@@ -40,4 +37,15 @@ input[type="submit"]
 {
     color: darkslategray;
     background-color: coral;
+}
+
+.main-table, th, td
+{
+    border: 1px solid black;
+    text-align: center;
+}
+
+a
+{
+    color: white;
 }

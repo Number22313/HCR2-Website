@@ -9,6 +9,10 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@app.route('/desert-valley-jeep.html')
+def dv_jeep():
+    return render_template('desert-valley-jeep.html')
+
 
 #enable debugging
 if __name__ == '__main__':
