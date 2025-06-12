@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+{% block content %}
+<head>
+    <table class="adventure-table">
+        <tr> <!-- table row for vehicles-->
+            <td></td>
+            <td>Jeep</td>
+            <td>Scooter</td>
+            <td>Bus</td>
+            <td>Mk2</td>
+            <td>Tractor</td>
+            <td>Motocross</td>
+            <td>Dune Buggy</td>
+            <td>Sports Car</td>
+            <td>Monster Truck</td>
+            <td>Rotator</td>
+        </tr>
+        <tr>
+            <td>Countryside</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Forest</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>City</td>
+            <td></td>
+        </tr>
+    </table>
+</head>
+
+<body>
+    <form>
+        <table class="form-table">
+            <tr>
+                <td colspan="2">
+                    Select Map:<br>
+                    <select name="Map">
+                        <option disabled selected hidden> </option>
+                        <option value="Countryside">Countryside</option>
+                        <option value="Forest">Forest</option>
+                        <option value="City">City</option>
+                        <option value="Mountain">Mountain</option>
+                        <option value="Reef">Reef</option>
+                        <option value="Winter">Winter</option>
+                        <option value="Mines">Mines</option>
+                        <option value="Desert Valley">Desert Valley</option>
+                        <option value="Beach">Beach</option>
+                        <option value="Bog">Bog</option>
+                        <option value="Glacier">Glacier</option>
+                        <option value="Patchwork">Patchwork</option>
+                        <option value="Savanna">Savanna</option>
+                        <option value="Gloomvale">Gloomvale</option>
+                        <option value="Overspill">Overspill</option>
+                        <option value="Canyon Arena">Canyon Arena</option>
+                        <option value="Cuptown">Cuptown</option>
+                        <option value="Moon">Moon</option>
+                    </select><br>
+                    <br>
+                    Distance (XXXXX):<br>
+                    <input type="number" max="10000" min="0" required>
+                    <br>
+                    <br>
+                    <input type="submit"><br>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+{% endblock %}

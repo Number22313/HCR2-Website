@@ -9,9 +9,9 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-@app.route('/desert-valley-jeep.html')
-def dv_jeep():
-    return render_template('desert-valley-jeep.html')
+@app.route('/10k_Form.html')
+def Form10k():
+    return render_template('10k_Form.html')
 
 
 #enable debugging
