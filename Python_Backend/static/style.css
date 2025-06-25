@@ -44,26 +44,30 @@ input[type="submit"]
     background-color: coral;
 }
 
-td, th
-{
-    border: 1px solid rgb(0, 0, 0);
-    text-align: left;
-}
-
 a
 {
     color: rgb(255, 145, 0);
 }
 
-.adventure-table, td
+.adventure-table img
 {
     font-size: medium;
     color: rgb(0, 0, 0);
-    padding-top: 10px;
-    padding-bottom: 10px;
+    width: 33px;
+    height: 21px;
+    margin: 0 auto;
+}
+
+.adventure-table td
+{
+    border: 1px solid black
 }
 
 .form-table
 {
+    width: 300px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: center;
     border-style: groove;
 }
