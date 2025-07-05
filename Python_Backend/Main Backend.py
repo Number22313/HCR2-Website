@@ -1,45 +1,22 @@
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template, request, g, redirect, url_for
 import sqlite3
 import logging
-logging.getLogger('werkzeug').setLevel(logging.WARNING)
+logging.getLogger('werkzeug').setLevel(logging.WARNING) #Supress 304 and terminal flood messages
 
 app = Flask(__name__)
 
 
-def get_db():
+def get_db(): #Database connection function
     db = getattr(g, '_database', None)
     if db is None:
-        db = g._database = sqlite3.connect('10k_Database.db')
+        db = g._database = sqlite3.connect('Distances.db')
+        db.row_factory = sqlite3.Row
         c = db.cursor()
-        c.execute('''CREATE TABLE IF NOT EXISTS Distance (
+        c.execute('''CREATE TABLE IF NOT EXISTS Distances (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name INT
-                  )''')
-        
-        c.execute('''CREATE TABLE IF NOT EXISTS Map (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT
-                  )''')
-        
-        c.execute('''CREATE TABLE IF NOT EXISTS Vehicle (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT
-                  )''')
-        
-        c.execute('''CREATE TABLE IF NOT EXISTS VehicleMap (
-                    vehicle_id INTEGER,
-                    map_id INTEGER,
-                    FOREIGN KEY(vehicle_id) REFERENCES Vehicle(id),
-                    FOREIGN KEY(map_id) REFERENCES Map(id),
-                    PRIMARY KEY (vehicle_id, map_id)
-                  )''')
-
-        c.execute('''CREATE TABLE IF NOT EXISTS ten_ks(
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT UNIQUE,
-                    Distance INTEGER,
-                    Map TEXT,
-                    Vehicle TEXT
+                    map TEXT NOT NULL,
+                    vehicle TEXT NOT NULL,
+                    distance REAL NOT NULL
                   )''')
         db.commit()
     return db
@@ -50,73 +27,54 @@ def close_db(exception):
     if db is not None:
         db.close()
 
-#make home.html the first page to load
-@app.route('/')
+
+# @app.route('/desert-valley-jeep.html')
+# def dvj():
+#     return('/desert-valley-jeep.html')
+
+#Main home page route with database table
+@app.route('/home', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+    db = get_db()
+    cur = db.cursor()
+    rows = cur.execute('SELECT * FROM Distances').fetchall()
+    print(rows)
+    return render_template('home.html', rows=rows)
 
 
-@app.route('/desert-valley-jeep.html')
-def dvj():
-    return('/desert-valley-jeep.html')
-
-#Route for specific 10ks
-@app.route('/specific_combo/<int:id>')
-def specific_combo(id):
-    conn = sqlite3.connect('Python_Backend/10k_Database.db')
-    cur = conn.cursor()
-    cur.execute('SELECT * FROM Map WHERE id=?;', (id,))
-    map_data = cur.fetchone()
-    cur.execute('''
-                SELECT name FROM Vehicle
-                WHERE id IN (
-                    SELECT vehicle_id FROM VehicleMap WHERE map_id=?
-                );
-            ''',(id,))
-    vehicle = cur.fetchall()
-    cur.execute('SELECT * FROM VehicleMap WHERE map_id=?;', (id,))
-    ten_ks = cur.fetchall()
-    conn.close()
-    if map and vehicle and ten_ks is None:
-        print("No Map")
-    else:
-        print("map", map_data)
-        print("vehicle", vehicle)
-        print("vehicle&map", ten_ks)
-    return render_template('specific_combo.html', map=map_data,vehicle=vehicle,ten_ks=ten_ks)
-
-
-#10k form page route and render
+#10k form page route and POST debugging
 @app.route('/10k_Form.html', methods=['GET', 'POST'])
 def Form10k():
+    print("10kform", request.method)
+    db = get_db()
+    c = db.cursor()
+
     if request.method == 'POST':
-        Distance = request.form['Distance']
-        Map = request.form['Map']
+        print("POSTED")
+        Distance = request.form.get('Distance')
+        Map = request.form.get('Map')
+        Vehicle = request.form.get('Vehicle')
         print("Distance:", Distance)
         print("Map:", Map)
-        db = get_db()
-        c = db.cursor()
-        try:
-            c.execute(
-                'INSERT INTO ten_ks (Distance, Map) VALUES (?,?)',
-                (Distance, Map))
-            db.commit()
-        except sqlite3.IntegrityError:
-            c.execute(
-                'UPDATE ten_ks SET Distance = ?, Map = ?',
-                (Distance, Map))
-            db.commit()
-        return render_template('desert-valley-jeep.html')
-    
-    return render_template('10k_Form.html')
+        print("Vehicle", Vehicle)
+        c.execute(
+            'INSERT INTO Distances (map, vehicle, distance) VALUES (?,?,?)',
+            (Map, Vehicle, Distance))
+        print("Rows:", c.rowcount)
+        db.commit()
+    forms = c.execute('SELECT * FROM Distances').fetchall()
+
+    return render_template('10k_Form.html', forms=forms)
 
 
-#enable debugging
+#Delete function for form inputs
+@app.route('/delete_distance/<int:id>', methods=['POST'])
+def delete_distance(id):
+    db = get_db()
+    db.execute("DELETE FROM Distances WHERE id = ?", (id,))
+    db.commit()
+    return redirect(url_for('home'))
+
+#Funciton for terminal debugging
 if __name__ == '__main__':
     app.run(debug = True)
-
-
-#database example code
-#@app.route('/page_1/<int:id>')
-#def page_1():
-#   return render_template('page_1.html')

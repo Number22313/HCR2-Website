@@ -1,4 +1,27 @@
 <header>
-    <h1>My Site!</h1>
-    <a href="10k_Form.html">10k_Form</a>
+    <h1>My Site!</h1> <!--links to go between pages easily-->
+    <a href="{{ url_for('Form10k') }}">10k Form</a>
+    <a href="{{ url_for('home') }}">Home Page</a>
 </header>
+
+<head> <!--table with database info for home page-->
+    <div>
+        <table border="1">
+            <h1>SHTUFF
+                {% for row in rows %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.map }}</td>
+                    <td>{{ row.vehicle }}</td>
+                    <td>{{ row.distance }}</td>
+                    <td> <!--Delete a database input-->
+                        <form action="{{url_for('delete_distance', id=row['id']) }}" method="post">
+                            <input type="submit" value="Delete" onclick="return confirm('confirm?')">
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </h1>
+        </table>
+    </div>
+</head>

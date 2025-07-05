@@ -1,190 +1,214 @@
 {% extends 'layout.html' %}
 {% block content %}
 <head>
-    <table class="adventure-table">
-        <tr> <!-- table row for vehicles-->
-            <td></td>
-            <td><img src="{{url_for('static', filename='jeep.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='scooter.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='bus.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='mk2.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='tractor.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='motocross.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='dunebuggy.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='sportscar.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='monstertruck.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='rotator.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='superdiesel.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='chopper.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='tank.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='lowrider.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='snowmobile.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='monowheel.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='beast.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='rallycar.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='formula.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='musclecar.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='racingtruck.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='hotrod.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='ccev.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='superbike.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='supercar.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='moonlander.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='rockbouncer.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='hoverbike.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='raider.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='glider.png') }}" alt="image"></td>
-            <td><img src="{{url_for('static', filename='bolt.png') }}" alt="image"></td>
-        </tr>
-        <tr><!--table column for maps-->
-            <td><img src="{{url_for('static', filename='countryside.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td><img src="{{url_for('static', filename='forest.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td><img src="{{url_for('static', filename='city.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='mountain.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='reef.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='winter.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='mines.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='desert.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='beach.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='bog.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='glacier.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='patchwork.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='savanna.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='gloomvale.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='overspill.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='arena.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='cuptown.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-                <tr>
-            <td><img src="{{url_for('static', filename='moon.png') }}" alt="image"></td>
-            <td></td>
-        </tr>
-    </table>
-</head>
-
-<div>
-    <form>
-        <table class="form-table" name="MainForm" method="POST">
-            <tr>
-                <td colspan="2">
-                    Select Map: 
-                    <select name="Map">
-                        <option disabled selected hidden> </option>
-                        <option value="Countryside">Countryside</option>
-                        <option value="Forest">Forest</option>
-                        <option value="City">City</option>
-                        <option value="Mountain">Mountain</option>
-                        <option value="Reef">Reef</option>
-                        <option value="Winter">Winter</option>
-                        <option value="Mines">Mines</option>
-                        <option value="Desert Valley">Desert Valley</option>
-                        <option value="Beach">Beach</option>
-                        <option value="Bog">Bog</option>
-                        <option value="Glacier">Glacier</option>
-                        <option value="Patchwork">Patchwork</option>
-                        <option value="Savanna">Savanna</option>
-                        <option value="Gloomvale">Gloomvale</option>
-                        <option value="Overspill">Overspill</option>
-                        <option value="Canyon Arena">Canyon Arena</option>
-                        <option value="Cuptown">Cuptown</option>
-                        <option value="Moon">Moon</option>
-                    </select>
-                    <br>
-                    <br>
-                    Select Vehicle: 
-                    <select name="Vehicle">
-                        <option disabled selected hidden> </option>
-                        <option value="Jeep">Jeep</option>
-                        <option value="Scooter">Scooter</option>
-                        <option value="Bus">Bus</option>
-                        <option value="Mk2">Mk2</option>
-                        <option value="Tractor">Tractor</option>
-                        <option value="Motocross">Motocross</option>
-                        <option value="DuneBuggy">Dune Buggy</option>
-                        <option value="SportsCar">Sports Car</option>
-                        <option value="MonsterTruck">Monster Truck</option>
-                        <option value="Rotator">Rotator</option>
-                        <option value="SuperDiesel">Super Diesel</option>
-                        <option value="Chopper">Chopper</option>
-                        <option value="Tank">Tank</option>
-                        <option value="Lowrider">Lowrider</option>
-                        <option value="Snowmobile">Snowmobile</option>
-                        <option value="Monowheel">Monowheel</option>
-                        <option value="Beast">Beast</option>
-                        <option value="RallyCar">RallyCar</option>
-                        <option value="Formula">Formula</option>
-                        <option value="MuscleCar">Muscle Car</option>
-                        <option value="RacingTruck">Racing Truck</option>
-                        <option value="Hotrod">Hotrod</option>
-                        <option value="CCEV">CC-EV</option>
-                        <option value="Superbike">Superbike</option>
-                        <option value="Supercar">Supercar</option>
-                        <option value="Moonlander">Moonlander</option>
-                        <option value="RockBouncer">Rock Bouncer</option>
-                        <option value="Hoverbike">Hoverbike</option>
-                        <option value="Raider">Raider</option>
-                        <option value="Glider">Glider</option>
-                        <option value="Bolt">Bolt</option>
-                    </select>
-                    <br>
-                    <br>
-                    Distance (XXXXX): 
-                    <input type="number" max="10000" min="0" maxlength="6" required>
-                    <br>
-                    <br>
-                    <input type="submit"><br>
+    <div>
+        <table class="adventure-table">
+            <tr> <!-- table row for vehicles-->
+                <td></td>
+                <td><img src="{{url_for('static', filename='jeep.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='scooter.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='bus.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='mk2.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='tractor.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='motocross.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='dunebuggy.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='sportscar.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='monstertruck.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='rotator.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='superdiesel.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='chopper.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='tank.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='lowrider.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='snowmobile.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='monowheel.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='beast.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='rallycar.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='formula.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='musclecar.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='racingtruck.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='hotrod.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='ccev.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='superbike.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='supercar.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='moonlander.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='rockbouncer.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='hoverbike.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='raider.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='glider.png') }}" alt="image"></td>
+                <td><img src="{{url_for('static', filename='bolt.png') }}" alt="image"></td>
+            </tr>
+            <tr><!--table column for maps-->
+                <td><img src="{{url_for('static', filename='countryside.png') }}" alt="image"></td>
+                <td><!--first prototype for distance spreadsheet logic-->
+                    {% for form in forms %}
+                        {% if form['map'] == "Countryside" and form['vehicle'] == "Jeep" %}
+                            {{ form['distance'] }}
+                        {% endif %}
+                    {% endfor %}
                 </td>
             </tr>
+            <tr>
+                <td><img src="{{url_for('static', filename='forest.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><img src="{{url_for('static', filename='city.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='mountain.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='reef.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='winter.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='mines.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='desert.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='beach.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='bog.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='glacier.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='patchwork.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='savanna.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='gloomvale.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='overspill.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='arena.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='cuptown.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><img src="{{url_for('static', filename='moon.png') }}" alt="image"></td>
+                <td></td>
+            </tr>
         </table>
-    </form>
-</div>
+    </div>
+</head>
+
+<body>
+    <div> <!--POST form-->
+        <form method="POST" action="{{url_for('Form10k') }}">
+            <table class="form-table" name="MainForm">
+                <tr>
+                    <td colspan="2">
+                        Select Map: 
+                        <select name="Map" required>
+                            <option disabled selected hidden> </option>
+                            <option value="Countryside">Countryside</option>
+                            <option value="Forest">Forest</option>
+                            <option value="City">City</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="Reef">Reef</option>
+                            <option value="Winter">Winter</option>
+                            <option value="Mines">Mines</option>
+                            <option value="Desert">Desert Valley</option>
+                            <option value="Beach">Beach</option>
+                            <option value="Bog">Bog</option>
+                            <option value="Glacier">Glacier</option>
+                            <option value="Patchwork">Patchwork</option>
+                            <option value="Savanna">Savanna</option>
+                            <option value="Gloomvale">Gloomvale</option>
+                            <option value="Overspill">Overspill</option>
+                            <option value="Canyonarena">Canyon Arena</option>
+                            <option value="Cuptown">Cuptown</option>
+                            <option value="Moon">Moon</option>
+                        </select>
+                        <br>
+                        <br>
+                        Select vehicle: 
+                        <select name="Vehicle" required>
+                            <option disabled selected hidden> </option>
+                            <option value="Jeep">Jeep</option>
+                            <option value="Scooter">Scooter</option>
+                            <option value="Bus">Bus</option>
+                            <option value="Mk2">Mk2</option>
+                            <option value="Tractor">Tractor</option>
+                            <option value="Motocross">Motocross</option>
+                            <option value="DuneBuggy">Dune Buggy</option>
+                            <option value="Sportscar">Sports Car</option>
+                            <option value="Monstertruck">Monster Truck</option>
+                            <option value="Rotator">Rotator</option>
+                            <option value="Superdiesel">Super Diesel</option>
+                            <option value="Chopper">Chopper</option>
+                            <option value="Tank">Tank</option>
+                            <option value="Lowrider">Lowrider</option>
+                            <option value="Snowmobile">Snowmobile</option>
+                            <option value="Monowheel">Monowheel</option>
+                            <option value="Beast">Beast</option>
+                            <option value="Rallycar">RallyCar</option>
+                            <option value="Formula">Formula</option>
+                            <option value="Musclecar">Muscle Car</option>
+                            <option value="Racingtruck">Racing Truck</option>
+                            <option value="Hotrod">Hotrod</option>
+                            <option value="CCev">CC-EV</option>
+                            <option value="Superbike">Superbike</option>
+                            <option value="Supercar">Supercar</option>
+                            <option value="Moonlander">Moonlander</option>
+                            <option value="Rockbouncer">Rock Bouncer</option>
+                            <option value="Hoverbike">Hoverbike</option>
+                            <option value="Raider">Raider</option>
+                            <option value="Glider">Glider</option>
+                            <option value="Bolt">Bolt</option>
+                        </select>
+                        <br>
+                        <br>
+                        Distance (XXXXX): 
+                        <input name="Distance" type="number" max="10000" min="0" maxlength="6" required>
+                        <br><br>
+                        <input type="submit" value="Submit"><br>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div> <!--table with database info for form page-->
+        <table border="1">
+            <h1>SHTUFF
+                {% for form in forms %}
+                <tr>
+                    <td>{{ form.id }}</td>
+                    <td>{{ form.map }}</td>
+                    <td>{{ form.vehicle }}</td>
+                    <td>{{ form.distance }}</td>
+                </tr>
+                {% endfor %}
+            </h1>
+        </table>
+    </div>
+</body>
 {% endblock %}
