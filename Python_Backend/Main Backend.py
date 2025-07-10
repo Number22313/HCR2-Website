@@ -9,15 +9,9 @@ app = Flask(__name__)
 def get_db(): #Database connection function
     db = getattr(g, '_database', None)
     if db is None:
-        db = g._database = sqlite3.connect('Distances.db')
+        db = g._database = sqlite3.connect('Python_Backend/Distances.db')
         db.row_factory = sqlite3.Row
         c = db.cursor()
-        c.execute('''CREATE TABLE IF NOT EXISTS Distances (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    map TEXT NOT NULL,
-                    vehicle TEXT NOT NULL,
-                    distance REAL NOT NULL
-                  )''')
         db.commit()
     return db
 
@@ -38,14 +32,13 @@ def home():
     db = get_db()
     cur = db.cursor()
     rows = cur.execute('SELECT * FROM Distances').fetchall()
-    print(rows)
     return render_template('home.html', rows=rows)
 
 
 #10k form page route and POST debugging
 @app.route('/10k_Form.html', methods=['GET', 'POST'])
 def Form10k():
-    print("10kform", request.method)
+    print("10kform ", request.method)
     db = get_db()
     c = db.cursor()
 
@@ -56,15 +49,30 @@ def Form10k():
         Vehicle = request.form.get('Vehicle')
         print("Distance:", Distance)
         print("Map:", Map)
-        print("Vehicle", Vehicle)
-        c.execute(
-            'INSERT INTO Distances (map, vehicle, distance) VALUES (?,?,?)',
-            (Map, Vehicle, Distance))
-        print("Rows:", c.rowcount)
-        db.commit()
+        print("Vehicle:", Vehicle)
+        try: #Insert form data into db
+            c.execute(
+                'INSERT INTO Distances (map, vehicle, distance) VALUES (?,?,?)',
+                (Map, Vehicle, Distance))
+            print("Inserted")
+            db.commit()
+        except sqlite3.IntegrityError: #Update db for duplicate data
+            c.execute(
+                'UPDATE Distances SET distance = ? WHERE map = ? AND vehicle = ?',
+                (Distance, Map, Vehicle))
+            print("Updated")
+            db.commit()
+
+        return redirect(url_for('Form10k')) #Prevent form resubmition when reloading page
+
     forms = c.execute('SELECT * FROM Distances').fetchall()
 
-    return render_template('10k_Form.html', forms=forms)
+    #Convert forms to dictionary
+    Rows = {}
+    for form in forms:
+        Rows[(form['map'], form['vehicle'])] = form['distance']
+
+    return render_template('10k_Form.html', forms=forms, Rows=Rows)
 
 
 #Delete function for form inputs

@@ -37,83 +37,617 @@
                 <td><img src="{{url_for('static', filename='glider.png') }}" alt="image"></td>
                 <td><img src="{{url_for('static', filename='bolt.png') }}" alt="image"></td>
             </tr>
-            <tr><!--table column for maps-->
+            <tr><!--table column for maps and distances-->
                 <td><img src="{{url_for('static', filename='countryside.png') }}" alt="image"></td>
-                <td><!--first prototype for distance spreadsheet logic-->
-                    {% for form in forms %}
-                        {% if form['map'] == "Countryside" and form['vehicle'] == "Jeep" %}
-                            {{ form['distance'] }}
-                        {% endif %}
-                    {% endfor %}
-                </td>
+                <td>{{ Rows.get(("Countryside", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Countryside", "Bolt"), "") }}</td>
             </tr>
             <tr>
                 <td><img src="{{url_for('static', filename='forest.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Forest", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Forest", "Bolt"), "") }}</td>
             </tr>
             <tr>
                 <td><img src="{{url_for('static', filename='city.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("City", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("City", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("City", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("City", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("City", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("City", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("City", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("City", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("City", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("City", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("City", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("City", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("City", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("City", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("City", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("City", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("City", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("City", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("City", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("City", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("City", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("City", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("City", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("City", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("City", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("City", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("City", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("City", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("City", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("City", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("City", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='mountain.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Mountain", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Mountain", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='reef.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Reef", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Reef", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+             <tr>
                 <td><img src="{{url_for('static', filename='winter.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Winter", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Winter", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='mines.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Mines", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Mines", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='desert.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Desert", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Desert", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='beach.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Beach", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Beach", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='bog.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Bog", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Bog", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='glacier.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Glacier", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Glacier", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='patchwork.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Patchwork", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Patchwork", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='savanna.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Savanna", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Savanna", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='gloomvale.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Gloomvale", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Gloomvale", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='overspill.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Overspill", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Overspill", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='arena.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Arena", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Arena", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='cuptown.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Cuptown", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Cuptown", "Bolt"), "") }}</td>
             </tr>
-                    <tr>
+            <tr>
                 <td><img src="{{url_for('static', filename='moon.png') }}" alt="image"></td>
-                <td></td>
+                <td>{{ Rows.get(("Moon", "Jeep"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Scooter"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Bus"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Mk2"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Tractor"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Motocross"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Dunebuggy"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Sportscar"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Monstertruck"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Rotator"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Superdiesel"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Chopper"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Tank"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Lowrider"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Snowmobile"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Monowheel"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Beast"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Rallycar"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Formula"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Musclecar"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Racingtruck"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Hotrod"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "CCev"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Superbike"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Supercar"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Moonlander"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Rockbouncer"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Hoverbike"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Raider"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Glider"), "") }}</td>
+                <td>{{ Rows.get(("Moon", "Bolt"), "") }}</td>
             </tr>
         </table>
     </div>
@@ -158,7 +692,7 @@
                             <option value="Mk2">Mk2</option>
                             <option value="Tractor">Tractor</option>
                             <option value="Motocross">Motocross</option>
-                            <option value="DuneBuggy">Dune Buggy</option>
+                            <option value="Dunebuggy">Dune Buggy</option>
                             <option value="Sportscar">Sports Car</option>
                             <option value="Monstertruck">Monster Truck</option>
                             <option value="Rotator">Rotator</option>
