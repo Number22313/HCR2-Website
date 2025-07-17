@@ -38,13 +38,12 @@ def home():
 #10k form page route and POST debugging
 @app.route('/10k_Form.html', methods=['GET', 'POST'])
 def Form10k():
-    print("10kform ", request.method)
+    print(request.method)
     db = get_db()
     c = db.cursor()
 
     if request.method == 'POST':
-        print("POSTED")
-        Distance = request.form.get('Distance')
+        Distance = request.form.get('Distance').strip()
         Map = request.form.get('Map')
         Vehicle = request.form.get('Vehicle')
         print("Distance:", Distance)
@@ -62,6 +61,7 @@ def Form10k():
                 (Distance, Map, Vehicle))
             print("Updated")
             db.commit()
+        print("POSTED")
 
         return redirect(url_for('Form10k')) #Prevent form resubmition when reloading page
 

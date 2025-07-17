@@ -654,7 +654,7 @@
 </head>
 
 <body>
-    <div> <!--POST form-->
+    <div class="whole-form-table"> <!--POST form-->
         <form method="POST" action="{{url_for('Form10k') }}">
             <table class="form-table" name="MainForm">
                 <tr>
@@ -728,21 +728,6 @@
                 </tr>
             </table>
         </form>
-    </div>
-
-    <div> <!--table with database info for form page-->
-        <table border="1">
-            <h1>SHTUFF
-                {% for form in forms %}
-                <tr>
-                    <td>{{ form.id }}</td>
-                    <td>{{ form.map }}</td>
-                    <td>{{ form.vehicle }}</td>
-                    <td>{{ form.distance }}</td>
-                </tr>
-                {% endfor %}
-            </h1>
-        </table>
     </div>
 </body>
 {% endblock %}
