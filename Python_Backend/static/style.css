@@ -63,11 +63,19 @@ a
     padding: 2vh;
 }
 
-.home-table
+.homepage
 {
     grid-row: 2;
     grid-column: 2;
     padding: 2vh;
+}
+
+.Completion
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1vh;
 }
 
 .Header

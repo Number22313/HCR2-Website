@@ -1,23 +1,43 @@
 {% extends 'layout.html' %}
 {% block content %}
-<body>
-    <div class="home-table">
+<body class="homepage">
+    <div class="Completion">
+        <div>Countryside: {{ CountrysideStars }}/310,000</div>
+        <div>Forest: {{ ForestStars }}/310,000</div>
+        <div>City: {{ CityStars }}/310,000</div>
+        <div>Mountain: {{ MountainStars }}/310,000</div>
+        <div>Reef: {{ ReefStars }}/310,000</div>
+        <div>Winter: {{ WinterStars }}/310,000</div>
+        <div>Mines: {{ MinesStars }}/310,000</div>
+        <div>Desert Valley: {{ DesertvalleyStars }}/310,000</div>
+        <div>Beach: {{ BeachStars }}/310,000</div>
+        <div>Bog: {{ BogStars }}/310,000</div>
+        <div>Glacier: {{ GlacierStars }}/310,000</div>
+        <div>Patchwork: {{ PatchworkStars }}/310,000</div>
+        <div>Savanna: {{ SavannaStars }}/310,000</div>
+        <div>Gloomvale: {{ GloomvaleStars }}/310,000</div>
+        <div>Overspill: {{ OverspillStars }}/310,000</div>
+        <div>Canyon Arena: {{ CanyonarenaStars }}/310,000</div>
+        <div>Cuptown: {{ CuptownStars }}/310,000</div>
+        <div>Moon: {{ MoonStars }}/310,000</div>
+        <div>Total Stars: {{ TotalStars }}/5,580,000</div>
+    </div>
+
+    <div>
         <table border="1">
-            <h1>header
-                {% for row in rows %}
-                <tr>
-                    <td>{{ row.id }}</td>
-                    <td>{{ row.map }}</td>
-                    <td>{{ row.vehicle }}</td>
-                    <td>{{ row.distance }}</td>
-                    <td><!--Delete a database input-->
-                        <form action="{{url_for('delete_distance', id=row['id']) }}" method="post">
-                            <input type="submit" value="Delete" onclick="return confirm('confirm?')">
-                        </form>
-                    </td>
-                </tr>
-                {% endfor %}
-            </h1>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.map }}</td>
+                <td>{{ row.vehicle }}</td>
+                <td>{{ row.distance }}</td>
+                <td><!--Delete a database input-->
+                    <form action="{{url_for('delete_distance', id=row['id']) }}" method="post">
+                        <input type="submit" value="Delete" onclick="return confirm('confirm?')">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
         </table>
     </div>
 </body>
