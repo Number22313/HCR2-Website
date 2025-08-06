@@ -1,18 +1,10 @@
-<body class="Header"> <!--table with database info for home page-->
-    <div class="title">
-        <h1>My Site!</h1>
+<header class="Header"> <!--All pages header-->
+    <nav class="nav">
+        <div class="LeftFiller">My Site!</div>
         <div class="homelinks">
             <a href="{{ url_for('home') }}">Home Page</a>
             <a href="{{ url_for('Form10k') }}">10k Form</a>
         </div>
-        <h1>Filler</h1> <!--links to go between pages easily-->
-    </div>
-    
-    <nav class="sidebar">
-        <ul>
-            <li>
-                Sidebar
-            </li>
-        </ul>
+        <div class="RightFiller">Filler</div> <!--links to go between pages easily-->
     </nav>
-</body>
+</header>

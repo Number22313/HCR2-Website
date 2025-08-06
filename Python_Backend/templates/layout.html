@@ -7,9 +7,12 @@
 </head>
 
 <body>
-    {% include 'header.html' %}
-    {% block content %}{% endblock %}
-    {% include 'footer.html' %}
+    <input type="checkbox" class="Theme-Toggle">
+    <div class="master-control">
+        {% include 'header.html' %}
+        {% block content %}{% endblock %}
+        {% include 'footer.html' %}
+    </div>
 </body>
 
 </html>
