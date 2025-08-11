@@ -1,26 +1,6 @@
-:root
-{
-    --background-color: #FFFFFF;
-    --text-color: #000000;
-    --element-background-color: #ffffff;
-}
-
-.Theme-Toggle:checked ~ .master-control
-{
-    --background-color:rgb(48, 42, 42);
-    --text-color: #f3f3f3;
-    --element-background-color: #353535;
-}
-
 body
 {
     margin: 1vh;
-}
-
-.master-control
-{
-    background-color: var(--background-color);
-    color: var(--text-color);
 }
 
 footer
@@ -35,7 +15,7 @@ footer
     color: darkslategray;
     background-color: aqua;
     font-size: large;
-    border-color: var(--text-color);
+    border-color: black;
     border-radius: 5%;
 }
 
@@ -61,7 +41,7 @@ a
 
 .adventure-table td /*border outline for cells*/
 {
-    border: 1px solid var(--text-color);
+    border: 1px solid black;
 }
 
 .adventure-table
@@ -86,17 +66,18 @@ a
 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    background-color: #f0f0f0;
 }
 
 .Completion > div
 {
-    border: 0.2vh solid var(--text-color);
+    border: 0.2vh solid black;
     border-radius: 2vh;
     height: 10vh;
     padding: 1vh;
     font-size: large;
     margin: 2vh;
-    background-color: var(--element-background-color);
+    background-color: white;
 }
 
 .nav /*Top main nav bar*/
@@ -163,5 +144,5 @@ a
 
 details
 {
-    background-color: #dddddd;
+    background-color: #ffffff;
 }
