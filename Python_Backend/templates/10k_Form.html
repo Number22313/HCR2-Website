@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
-<head>
+<body class="FormPage">
     <div>
         <table class="adventure-table">
             <tr> <!-- table row for vehicles-->
@@ -651,9 +651,7 @@
             </tr>
         </table>
     </div>
-</head>
-
-<body>
+    <br>
     <div class="whole-form-table"> <!--POST form-->
         <form method="POST" action="{{url_for('Form10k') }}">
             <table class="form-table" name="MainForm">
@@ -683,7 +681,7 @@
                         </select>
                         <br>
                         <br>
-                        Select vehicle: 
+                        Select Vehicle: 
                         <select name="Vehicle" required>
                             <option disabled selected hidden> </option>
                             <option value="Jeep">Jeep</option>
