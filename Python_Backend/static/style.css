@@ -68,19 +68,25 @@ a
 .Completion
 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: rgb(211, 211, 211);
 }
 
 .Completion > div
 {
     border: 0.2vh solid black;
-    border-radius: 2vh;
-    height: 10vh;
-    padding: 1vh;
+    height: 50vh;
+    width: 20vw;
+    padding: 2vh;
+    border-radius: 1vh;
     font-size: large;
-    margin: 2vh;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    margin: 2vh 0 2vh 2vh;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1vh;
+    background-color: white;
 }
 
 .Header
@@ -101,8 +107,7 @@ a
     margin-bottom: 1.5vh;
     border-radius: 2vh;
     border-radius: 1vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: black;
 }
 
 .nav > div
@@ -133,37 +138,37 @@ a
 
 .link:hover
 {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 2vh;
+    background-color: black;
+    color: white;
 }
 
 .link
 {
-    padding: 1vh;
+    padding: 0.5vh;
+    color: black;
+    text-align: center;
 }
 
 .Progress-Bar
 {
-    margin-top: 2vh;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: whitesmoke;
     height: 3vh;
     border-radius: 5vh;
 }
 
 .Progress
 {
-    background-color: rgb(30, 151, 19);
-    border-radius: inherit;
+    background-color: rgb(41, 196, 26);
+    border-radius: 5vh;
     text-align: center;
-    height: inherit;
+    height: 3vh;
 }
 
 .Ranking
 {
     border-radius: 2vh;
     padding: 1vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: black;
     width: fit-content;
     display: flex;
     justify-content: flex-end;
@@ -176,44 +181,43 @@ a
 
 .Maps-Guide
 {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
+    color: black;
     padding: 1vh;
     width: 100%;
     border-radius: 2vh;
 }
 
-.background
-{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    filter: blur(4px);
-}
-
-.bg1
-{
-    background-image: url(mountain-background2.png);
-    top: 0;
-}
-
-.bg2
-{
-    background-image: url(winter-background.png);
-    top: 100vh;
-}
-
 .content
 {
-    z-index: 1;
     margin-left: 2vw;
     margin-right: 2vw;
 }
 
-.FormPage
+
+details
 {
-    z-index: 1;
+    border-radius: 2vh;
+    padding: 1vh;
+}
+
+.background
+{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.addDistance
+{
+    width: auto;
+    height: auto;
+    border-radius: 1.3vh;
+    border: 1px solid black;
+    background-color: aliceblue;
+}
+
+.header
+{
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 0.5vh;
 }
