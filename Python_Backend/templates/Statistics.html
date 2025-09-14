@@ -2,6 +2,7 @@
 {% block content %}
 <body class="FormPage">
     <div>
+        <!--Displays each distance in the correct cell with images in the first row and column-->
         <table class="adventure-table">
             <tr> <!-- table row for vehicles-->
                 <td></td>
@@ -651,9 +652,9 @@
             </tr>
         </table>
     </div>
-    <div class="form-main"> <!--POST form-->
+    <div class="form-main"> <!--POST form to submit data to the database-->
         <div class="content-header">Submit New Distance</div>
-        <form method="POST" action="{{url_for('Form10k') }}">
+        <form method="POST" action="{{url_for('Stats') }}">
             <div class="form">
                 <div class="selectmap">
                     Select Map<br>
@@ -728,27 +729,44 @@
         </form>
     </div>
     <br>
+    <!--Displays miscellaneous info about progress-->
     <div class="stats">
         <div class="statsleft">
-            <h2>Overall Progress</h2>
+            <h1>Overall Progress</h1>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ TotalPercent }}%"></div>
             </div>
-            <p>{{ Total10ks }} / 558 10ks Completed</p>
+            <p style="font-size: x-large;">{{ Total10ks }} / 558 10ks Completed</p>
         </div>
 
         <div class="statsright">
-            <div class="statsbox1">
-                <span">Total Distance</span>
-                <span>{{ TotalDistance }}K</span>
+            <div class="statsbox1 box">
+                <img class="icon" src="{{ url_for('static', filename='globe-icon.svg') }}"><br>
+                <span">Total Distance</span><br>
+                <b>{{ TotalDistance }}K</b>
             </div>
 
-            <div class="statsbox2">
-                <span">Maxed Maps</span>
-                <span>{{ MaxMaps }}/18</span>
+            <div class="statsbox2 box">
+                <img class="icon" src="{{ url_for('static', filename='circlecheck-icon.svg') }}"><br>
+                <span">Maxed Maps</span><br>
+                <b>{{ MaxMaps }}/18</b>
+            </div>
+
+            <div class="statsbox3 box">
+                <img class="icon" src="{{ url_for('static', filename='hourglass-icon.svg') }}"><br>
+                <span">Remaining 10ks</span><br>
+                <b>{{ Remaining10ks }}</b>
+            </div>
+
+            <div class="statsbox4 box">
+                <img class="icon" src="{{ url_for('static', filename='star-icon.svg') }}"><br>
+                <span">Average Stars Per Map</span><br>
+                <b>{{ AverageStars }}</b>
             </div>
         </div>
     </div>
+    <br>
+    <!--Progress bars showing how many stars out of 310,000 that have been achieved-->
     <div class="Completion">
         <div>Countryside: {{ CountrysideStars }}/310,000
             <div class="Progress-Bar">
