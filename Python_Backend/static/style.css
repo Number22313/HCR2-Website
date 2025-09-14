@@ -1,4 +1,9 @@
-/* background-attachment: fixed; this keeps the background fixed when scrolling */
+:root
+{
+    --theme: rgb(238, 36, 36);
+}
+
+
 body
 {
     margin: 0;
@@ -12,20 +17,6 @@ footer
 }
 
 
-.form-table, input[type="submit"]
-{
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 2vh;
-}
-
-.form-table
-{
-    text-align: center;
-    min-width: 20vw;
-    padding: 1vh;
-}
-
-
 [type="submit"]:hover
 {
     background-color: black;
@@ -36,7 +27,6 @@ a
 {
     text-decoration: none;
     display: inline-block;
-    color: white;
 }
 
 .adventure-table img /*10k spreadsheet image styling*/
@@ -49,32 +39,72 @@ a
 .adventure-table td /*border outline for cells*/
 {
     border: 1px solid black;
-    width: 44px;
+    min-width: 2.56vw;
+    text-align: center;
 }
 
 .adventure-table
 {
     padding: 2vh;
-    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 2vh;
+    margin-bottom: 5vh;
+    margin-top: 10vh;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 1.5vh;
 }
 
-.whole-form-table
+.form-main
+{
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 1.5vh;
+}
+
+.form
 {
     padding: 2vh;
-    margin-top: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    min-width: 90vw;
+    gap: 4vh;
+}
+
+.form > div
+{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2vh;
+    width: 20vw;
+    height: 100%;
+    font-size: large;
+    font-family: arial;
+}
+
+select, input
+{
+    width: 100%;
+    border-radius: 1vh;
+    background-color: white;
+    color: black;
+    height: 5vh;
+    padding: 0 1vh;
+    line-height: 5vh;
+    box-sizing: border-box;
+    margin-top: 1vh;
+    font-size: inherit;
 }
 
 .Completion
 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: rgb(211, 211, 211);
 }
 
 .Completion > div
 {
-    border: 0.2vh solid black;
     height: 50vh;
     width: 20vw;
     padding: 2vh;
@@ -86,7 +116,17 @@ a
     flex-direction: column;
     justify-content: flex-end;
     gap: 1vh;
-    background-color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border-radius: 1.5vh;
+}
+
+.content-header
+{
+    display: flex;
+    font-size: x-large;
+    font-weight: bold;
+    padding-top: 2vh;
+    margin-left: 4vh;
 }
 
 .Header
@@ -98,48 +138,33 @@ a
 .nav /*Top main nav bar*/
 {
     list-style: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
     font-size: large;
     height: 8vh;
-    width: 98vw;
-    margin-top: 1.5vh;
+    width: 100%;
     margin-bottom: 1.5vh;
-    border-radius: 2vh;
-    border-radius: 1vh;
-    color: black;
-}
-
-.nav > div
-{
-    display: flex;
-    align-items: center;
-    grid-row: 1;
+    color: white;
+    background: var(--theme);
+    position: absolute;
 }
 
 .LeftFiller
 {
-    justify-content: flex-start;
-    grid-column: 1
+    margin-left: 2vh;
 }
 
-.RightFiller
+.mainlinks
 {
-    justify-content: flex-end;
-    grid-column: 3;
-}
-
-.homelinks
-{
-    justify-content: center;
-    grid-column: 2;
-    gap: 2vw;
+    list-style: none;
 }
 
 .link:hover
 {
     background-color: black;
     color: white;
+    border-radius: 1vh;
 }
 
 .link
@@ -158,20 +183,10 @@ a
 
 .Progress
 {
-    background-color: rgb(41, 196, 26);
+    background-color: var(--theme);
     border-radius: 5vh;
     text-align: center;
     height: 3vh;
-}
-
-.Ranking
-{
-    border-radius: 2vh;
-    padding: 1vh;
-    color: black;
-    width: fit-content;
-    display: flex;
-    justify-content: flex-end;
 }
 
 .homepage
@@ -212,7 +227,7 @@ details
     height: auto;
     border-radius: 1.3vh;
     border: 1px solid black;
-    background-color: aliceblue;
+    background-color: var(--theme);
 }
 
 .header
@@ -220,4 +235,42 @@ details
     font-size: x-large;
     font-weight: bold;
     margin-bottom: 0.5vh;
+}
+
+.stats
+{
+    display: flex;
+    gap: 2vh;
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(233, 233, 233);
+}
+
+.statsleft
+{
+    border: 0.3vh solid black;
+    width: 50%;
+}
+
+.statsright
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 50%;
+    border: 0.3vh solid black;
+}
+
+.statsbox1
+{
+    grid-row: 1;
+    grid-column: 1;
+    border: 0.4vh solid black;
+}
+
+.statsbox2
+{
+    grid-row: 1;
+    grid-column: 2;
+    border: 0.4vh solid black;
 }

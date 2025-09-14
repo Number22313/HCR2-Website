@@ -2,170 +2,34 @@
 {% block content %}
 <div class="homepage">
     <div class="Info">
-        <div class="Ranking">
-            <details>
-                <summary>Possible maps to max ranked easiest to hardest</summary>
-                <div>
-                    <table>
-                        <tr>
-                            <td>
-                                1.  Forest<br>
-                                2.  Desert Valley<br>
-                                3.  City<br>
-                                4.  Bog<br>
-                                5.  Winter<br>
-                                6.  Reef<br>
-                                7.  Moon<br>
-                                8.  Mines<br>
-                                9.  Savanna<br>
-                                10. Beach<br>
-                                11. Mountain<br>
-                                12. Gloomvale<br>
-                                13. Cuptown<br>
-                                14. Countryside<br>
-                                15. Overspill<br>
-                                16. Patchwork<br>
-                                17. Canyon Arena<br>
-                                18. Racer Glacier <br>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </details>
-        </div>
-
-        <div class="Completion">
-            <div>Countryside: {{ CountrysideStars }}/310,000
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent1 }}%">{{ Percent1 }}%</div>
-                </div>
-            </div>
-
-            <div class="background" style="background-image: url(/static/forest-background.png);">
-                <div class="header">Forest</div><span>Progress</span>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent2 }}%">{{ Percent2 }}%</div>
-                </div>
-                <span>{{ ForestStars }}/310,000</span>
-                <a class="link addDistance">Add Distance</a>
-            </div>
-
-            <div class="background" style="background-image: url(/static/city-background.png);">
-                <div class="header">City</div><span>Progress</span>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent3 }}%">{{ Percent3 }}%</div>
-                </div>
-                <span>{{ CityStars }}/310,000</span>
-                <a class="link addDistance">Add Distance</a>
-            </div>
-
-            <div class="background" style="background-image: url(/static/mountain-background2.png);">
-                <div class="header">Mountain</div><span>Progress</span>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent4 }}%">{{ Percent4 }}%</div>
-                </div>
-                <span>{{ MountainStars }}/310,000</span>
-                <a class="link addDistance">Add Distance</a>
-            </div>
-
-            <div>Reef: {{ ReefStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent5 }}%">{{ Percent5 }}%</div>
-                </div>
-            </div>
-
-            <div class="background" style="background-image: url(/static/winter-background.png);">
-                <div class="header">Winter</div><span>Progress</span>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent6 }}%">{{ Percent6 }}%</div>
-                </div>
-                <span>{{ WinterStars }}/310,000</span>
-                <a class="link addDistance">Add Distance</a>
-            </div>
-
-            <div class="background" style="background-image: url(/static/mines-background.png);">
-                <div class="header">Mines</div><span>Progress</span>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent7 }}%">{{ Percent7 }}%</div>
-                </div>
-                <span>{{ MinesStars }}/310,000</span>
-                <a class="link addDistance">Add Distance</a>
-            </div>
-
-            <div>Desert Valley: {{ DesertvalleyStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent8 }}%">{{ Percent8 }}%</div>
-                </div>
-            </div>
-
-            <div>Beach: {{ BeachStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent9 }}%">{{ Percent9 }}%</div>
-                </div>
-            </div>
-
-            <div>Bog: {{ BogStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent10 }}%">{{ Percent10 }}%</div>
-                </div>
-            </div>
-
-            <div>Glacier: {{ GlacierStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent11 }}%">{{ Percent11 }}%</div>
-                </div>
-            </div>
-
-            <div>Patchwork: {{ PatchworkStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent12 }}%">{{ Percent12 }}%</div>
-                </div>
-            </div>
-
-            <div>Savanna: {{ SavannaStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent13 }}%">{{ Percent13 }}%</div>
-                </div>
-            </div>
-
-            <div>Gloomvale: {{ GloomvaleStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent14 }}%">{{ Percent14 }}%</div>
-                </div>
-            </div>
-
-            <div>Overspill: {{ OverspillStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent15 }}%">{{ Percent15 }}%</div>
-                </div>
-            </div>
-
-            <div>Canyon Arena: {{ CanyonarenaStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent16 }}%">{{ Percent16 }}%</div>
-                </div>
-            </div>
-
-            <div>Cuptown: {{ CuptownStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent17 }}%">{{ Percent17 }}%</div>
-                </div>
-            </div>
-
-            <div>Moon: {{ MoonStars }}/310,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent18 }}%">{{ Percent18 }}%</div>
-                </div>
-            </div>
-
-            <div>Total Stars: {{ TotalStars }}/5,580,000<br>
-                <div class="Progress-Bar">
-                    <div class="Progress" style="width: {{ Percent }}%">{{ Percent }}%</div>
-                </div>
-            </div>
-        </div> 
-
         <div class="Maps-Guide">
+            <div>
+                <details>
+                    <summary>Possible maps to max ranked easiest to hardest</summary>
+                    <div>
+                        <p>
+                            1.  Forest<br>
+                            2.  Desert Valley<br>
+                            3.  City<br>
+                            4.  Bog<br>
+                            5.  Winter<br>
+                            6.  Reef<br>
+                            7.  Moon<br>
+                            8.  Mines<br>
+                            9.  Savanna<br>
+                            10. Beach<br>
+                            11. Mountain<br>
+                            12. Gloomvale<br>
+                            13. Cuptown<br>
+                            14. Countryside<br>
+                            15. Overspill<br>
+                            16. Patchwork<br>
+                            17. Canyon Arena<br>
+                            18. Racer Glacier <br>
+                        </p>
+                    </div>
+                </details>
+            </div>
             <div>
                 <details>
                     <summary>Countryside</summary>
@@ -540,11 +404,42 @@
                             3/10: Glider
                             4/10: Rallycar, Raider
                             5/10: Musclecar, CC-EV, Super Diesel, Tank, Racing Truck, Bus, Scooter
-                            6/10: 
-                            7/10: 
-                            8/10: 
-                            9/10: 
-                            10/10:
+                            6/10: Motocross, Dune Buggy, Bolt, Snowmobile, Monster Truck, Rock Bouncer, Tractor, Chopper
+                            7/10: Mk2, Jeep, Sportscar, Beast
+                            8/10: Moonlander(eco thrust), Hoverbike, Rotator
+                            9/10: Formula, Lowrider, Supercar, Monowheel, Hotrod
+                            10/10:Superbike
+                            <a href="" target="_blank">Glider:</a> Jump Shocks, Magnet, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=HLIxKVibqxk" target="_blank">Rally Car:</a> Jump Shocks, Wings, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=zXKk031a7uQ" target="_blank">Raider:</a> Jump Shocks, Wings, Winter Tires<br>
+                            <a href="https://www.youtube.com/watch?v=HbFbZ8pumJs" target="_blank">Muscle Car:</a> Jump Shocks, Wings, Winter Tires<br>
+                            <a href="https://www.youtube.com/watch?v=lozo1emhuFs" target="_blank">CC-EV:</a> Jump Shocks, Wings, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=1MQ_WdsIgrQ" target="_blank">Super Diesel:</a> Jump Shocks, Wings, Fume Boost<br>
+                            <a href="https://www.youtube.com/watch?v=_-Rn_nJgFLQ" target="_blank">Tank:</a> Jump Shocks, Wings, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=0x52lsCD2KQ" target="_blank">Racing Truck:</a> Wheelie Boost, Wings, Jump Shocks<br>
+                            <a href="https://www.youtube.com/watch?v=hp73Kv-0mpA" target="_blank">Bus:</a> Jump Shocks, Wings, Fume Boost<br>
+                            <a href="https://www.youtube.com/watch?v=k3cyQS8yC20" target="_blank">Scooter:</a> Jump Shocks, Wings, Landing Boost<br>
+                            <a href="" target="_blank">Motocross:</a> Jump Shocks, Magnet, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=HLIxKVibqxk" target="_blank">Dune Buggy:</a> Jump Shocks, Wings, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=68GRoWlKmFE" target="_blank">Bolt:</a> Jump Shocks, Wings, Landing Boost<br>
+                            <a href="" target="_blank">Snowmobile:</a> Jump Shocks, Magnet, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=bcVEDjmfilc" target="_blank">Monster Truck:</a> Coin Boost, Wings, Fume Boost<br>
+                            <a href="https://www.youtube.com/watch?v=kIndeFt7ssw" target="_blank">Rock Bouncer:</a> Jump Shocks, Wings, Wheelie Boost<br>
+                            <a href="https://www.youtube.com/watch?v=QdZXTfUfKUM" target="_blank">Tractor:</a> Jump Shocks, Wings, Fume Boost<br>
+                            <a href="https://www.youtube.com/watch?v=PCZ94DbVQao" target="_blank">Chopper:</a> Fume Boost, Wings, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=AvZni7uKE1s" target="_blank">Mk2:</a> Jump Shocks, Wings, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=s-UaXc0d32Q" target="_blank">Jeep:</a> Jump Shocks, Magnet, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=Nikeo6J3H78" target="_blank">Sports Car:</a> Jump Shocks, Wings, Landing Boost, Fume Boost<br>
+                            <a href="https://www.youtube.com/watch?v=pr4Ea92TKFQ" target="_blank">Beast:</a> Winter Tires, Wings, Nitro<br>
+                            <a href="" target="_blank">Moonlander:</a> Jump Shocks, Magnet, Landing Boost<br>
+                            <a href="https://www.youtube.com/watch?v=JkRaVrMlqBg" target="_blank">Hoverbike:</a> Coin Boost, Magnet, FUme Boost, Nitro<br>
+                            <a href="https://www.youtube.com/watch?v=oOi3TW9-gqA" target="_blank">Rotator:</a> Wings, Coin Boost, Fume Boost<br>
+                            <a href="" target="_blank">Formula:</a> Jump Shocks, Magnet, Landing Boost<br>
+                            <a href="https://www.youtube.com/live/UiXcGLLxkrY?si=ABGbvWXJouGunjIh&t=12274" target="_blank">Lowrider:</a> Coin Boost, Wings, Landing Boost, Fume Boost<br>
+                            <a href="https://www.youtube.com/watch?v=BS7RTaU-rho" target="_blank">Supercar:</a> Jump Shocks, Wings, Landing Boost, Coin Boost<br>
+                            <a href="https://www.youtube.com/watch?v=nGHqgF3rrvg" target="_blank">Monowheel:</a> Jump Shocks, Wings, Fume Boost, Overcharged Turbo<br>
+                            <a href="https://www.youtube.com/watch?v=8oBXdSGbOvc" target="_blank">Hotrod:</a> Jump Shocks, Coin Boost, Landing Boost, Nitro<br>
+                            <a href="" target="_blank">Superbike:</a> Jump Shocks, Magnet, Landing Boost<br>
                         </p>
                     </div>
                 </details>

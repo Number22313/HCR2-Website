@@ -651,81 +651,233 @@
             </tr>
         </table>
     </div>
-    <br>
-    <div class="whole-form-table"> <!--POST form-->
+    <div class="form-main"> <!--POST form-->
+        <div class="content-header">Submit New Distance</div>
         <form method="POST" action="{{url_for('Form10k') }}">
-            <table class="form-table" name="MainForm">
-                <tr>
-                    <td colspan="2">
-                        Select Map: 
-                        <select name="Map" required>
-                            <option disabled selected hidden> </option>
-                            <option value="Countryside">Countryside</option>
-                            <option value="Forest">Forest</option>
-                            <option value="City">City</option>
-                            <option value="Mountain">Mountain</option>
-                            <option value="Reef">Reef</option>
-                            <option value="Winter">Winter</option>
-                            <option value="Mines">Mines</option>
-                            <option value="Desert">Desert Valley</option>
-                            <option value="Beach">Beach</option>
-                            <option value="Bog">Bog</option>
-                            <option value="Glacier">Glacier</option>
-                            <option value="Patchwork">Patchwork</option>
-                            <option value="Savanna">Savanna</option>
-                            <option value="Gloomvale">Gloomvale</option>
-                            <option value="Overspill">Overspill</option>
-                            <option value="Canyonarena">Canyon Arena</option>
-                            <option value="Cuptown">Cuptown</option>
-                            <option value="Moon">Moon</option>
-                        </select>
-                        <br>
-                        <br>
-                        Select Vehicle: 
-                        <select name="Vehicle" required>
-                            <option disabled selected hidden> </option>
-                            <option value="Jeep">Jeep</option>
-                            <option value="Scooter">Scooter</option>
-                            <option value="Bus">Bus</option>
-                            <option value="Mk2">Mk2</option>
-                            <option value="Tractor">Tractor</option>
-                            <option value="Motocross">Motocross</option>
-                            <option value="Dunebuggy">Dune Buggy</option>
-                            <option value="Sportscar">Sports Car</option>
-                            <option value="Monstertruck">Monster Truck</option>
-                            <option value="Rotator">Rotator</option>
-                            <option value="Superdiesel">Super Diesel</option>
-                            <option value="Chopper">Chopper</option>
-                            <option value="Tank">Tank</option>
-                            <option value="Lowrider">Lowrider</option>
-                            <option value="Snowmobile">Snowmobile</option>
-                            <option value="Monowheel">Monowheel</option>
-                            <option value="Beast">Beast</option>
-                            <option value="Rallycar">RallyCar</option>
-                            <option value="Formula">Formula</option>
-                            <option value="Musclecar">Muscle Car</option>
-                            <option value="Racingtruck">Racing Truck</option>
-                            <option value="Hotrod">Hotrod</option>
-                            <option value="CCev">CC-EV</option>
-                            <option value="Superbike">Superbike</option>
-                            <option value="Supercar">Supercar</option>
-                            <option value="Moonlander">Moonlander</option>
-                            <option value="Rockbouncer">Rock Bouncer</option>
-                            <option value="Hoverbike">Hoverbike</option>
-                            <option value="Raider">Raider</option>
-                            <option value="Glider">Glider</option>
-                            <option value="Bolt">Bolt</option>
-                        </select>
-                        <br>
-                        <br>
-                        Distance (XXXXX): 
-                        <input name="Distance" type="number" max="10000" min="0" maxlength="6" required>
-                        <br><br>
-                        <input type="submit" value="Submit"><br>
-                    </td>
-                </tr>
-            </table>
+            <div class="form">
+                <div class="selectmap">
+                    Select Map<br>
+                    <select name="Map" required>
+                        <option disabled selected hidden></option>
+                        <option value="Countryside">Countryside</option>
+                        <option value="Forest">Forest</option>
+                        <option value="City">City</option>
+                        <option value="Mountain">Mountain</option>
+                        <option value="Reef">Reef</option>
+                        <option value="Winter">Winter</option>
+                        <option value="Mines">Mines</option>
+                        <option value="Desert">Desert Valley</option>
+                        <option value="Beach">Beach</option>
+                        <option value="Bog">Bog</option>
+                        <option value="Glacier">Glacier</option>
+                        <option value="Patchwork">Patchwork</option>
+                        <option value="Savanna">Savanna</option>
+                        <option value="Gloomvale">Gloomvale</option>
+                        <option value="Overspill">Overspill</option>
+                        <option value="Canyonarena">Canyon Arena</option>
+                        <option value="Cuptown">Cuptown</option>
+                        <option value="Moon">Moon</option>
+                    </select>
+                </div>
+                
+                <div class="selectvehicle">
+                    Select Vehicle<br>
+                    <select name="Vehicle" required>
+                        <option disabled selected hidden></option>
+                        <option value="Jeep">Jeep</option>
+                        <option value="Scooter">Scooter</option>
+                        <option value="Bus">Bus</option>
+                        <option value="Mk2">Mk2</option>
+                        <option value="Tractor">Tractor</option>
+                        <option value="Motocross">Motocross</option>
+                        <option value="Dunebuggy">Dune Buggy</option>
+                        <option value="Sportscar">Sports Car</option>
+                        <option value="Monstertruck">Monster Truck</option>
+                        <option value="Rotator">Rotator</option>
+                        <option value="Superdiesel">Super Diesel</option>
+                        <option value="Chopper">Chopper</option>
+                        <option value="Tank">Tank</option>
+                        <option value="Lowrider">Lowrider</option>
+                        <option value="Snowmobile">Snowmobile</option>
+                        <option value="Monowheel">Monowheel</option>
+                        <option value="Beast">Beast</option>
+                        <option value="Rallycar">RallyCar</option>
+                        <option value="Formula">Formula</option>
+                        <option value="Musclecar">Muscle Car</option>
+                        <option value="Racingtruck">Racing Truck</option>
+                        <option value="Hotrod">Hotrod</option>
+                        <option value="CCev">CC-EV</option>
+                        <option value="Superbike">Superbike</option>
+                        <option value="Supercar">Supercar</option>
+                        <option value="Moonlander">Moonlander</option>
+                        <option value="Rockbouncer">Rock Bouncer</option>
+                        <option value="Hoverbike">Hoverbike</option>
+                        <option value="Raider">Raider</option>
+                        <option value="Glider">Glider</option>
+                        <option value="Bolt">Bolt</option>
+                    </select>
+                </div>
+
+                <div class="selectdistance">
+                    Distance (m)<br><input name="Distance" type="number" max="10000" min="0" maxlength="6" required>
+                </div>
+                <div>
+                    <br><input type="submit" value="Submit Distance" class="Submit-Button">
+                </div>
+            </div>
         </form>
     </div>
+    <br>
+    <div class="stats">
+        <div class="statsleft">
+            <h2>Overall Progress</h2>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ TotalPercent }}%"></div>
+            </div>
+            <p>{{ Total10ks }} / 558 10ks Completed</p>
+        </div>
+
+        <div class="statsright">
+            <div class="statsbox1">
+                <span">Total Distance</span>
+                <span>{{ TotalDistance }}K</span>
+            </div>
+
+            <div class="statsbox2">
+                <span">Maxed Maps</span>
+                <span>{{ MaxMaps }}/18</span>
+            </div>
+        </div>
+    </div>
+    <div class="Completion">
+        <div>Countryside: {{ CountrysideStars }}/310,000
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent1 }}%">{{ Percent1 }}%</div>
+            </div>
+        </div>
+
+        <div class="background" style="background-image: url(/static/forest-background.png);">
+            <div class="header">Forest</div><span>Progress</span>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent2 }}%">{{ Percent2 }}%</div>
+            </div>
+            <span>{{ ForestStars }}/310,000</span>
+            <a class="link addDistance">Add Distance</a>
+        </div>
+
+        <div class="background" style="background-image: url(/static/city-background.png);">
+            <div class="header">City</div><span>Progress</span>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent3 }}%">{{ Percent3 }}%</div>
+            </div>
+            <span>{{ CityStars }}/310,000</span>
+            <a class="link addDistance">Add Distance</a>
+        </div>
+
+        <div class="background" style="background-image: url(/static/mountain-background2.png);">
+            <div class="header">Mountain</div><span>Progress</span>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent4 }}%">{{ Percent4 }}%</div>
+            </div>
+            <span>{{ MountainStars }}/310,000</span>
+            <a class="link addDistance">Add Distance</a>
+        </div>
+
+        <div>Reef: {{ ReefStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent5 }}%">{{ Percent5 }}%</div>
+            </div>
+        </div>
+
+        <div class="background" style="background-image: url(/static/winter-background.png);">
+            <div class="header">Winter</div><span>Progress</span>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent6 }}%">{{ Percent6 }}%</div>
+            </div>
+            <span>{{ WinterStars }}/310,000</span>
+            <a class="link addDistance">Add Distance</a>
+        </div>
+
+        <div class="background" style="background-image: url(/static/mines-background.png);">
+            <div class="header">Mines</div><span>Progress</span>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent7 }}%">{{ Percent7 }}%</div>
+            </div>
+            <span>{{ MinesStars }}/310,000</span>
+            <a class="link addDistance">Add Distance</a>
+        </div>
+
+        <div>Desert Valley: {{ DesertvalleyStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent8 }}%">{{ Percent8 }}%</div>
+            </div>
+        </div>
+
+        <div>Beach: {{ BeachStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent9 }}%">{{ Percent9 }}%</div>
+            </div>
+        </div>
+
+        <div>Bog: {{ BogStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent10 }}%">{{ Percent10 }}%</div>
+            </div>
+        </div>
+
+        <div>Glacier: {{ GlacierStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent11 }}%">{{ Percent11 }}%</div>
+            </div>
+        </div>
+
+        <div>Patchwork: {{ PatchworkStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent12 }}%">{{ Percent12 }}%</div>
+            </div>
+        </div>
+
+        <div>Savanna: {{ SavannaStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent13 }}%">{{ Percent13 }}%</div>
+            </div>
+        </div>
+
+        <div>Gloomvale: {{ GloomvaleStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent14 }}%">{{ Percent14 }}%</div>
+            </div>
+        </div>
+
+        <div>Overspill: {{ OverspillStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent15 }}%">{{ Percent15 }}%</div>
+            </div>
+        </div>
+
+        <div>Canyon Arena: {{ CanyonarenaStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent16 }}%">{{ Percent16 }}%</div>
+            </div>
+        </div>
+
+        <div>Cuptown: {{ CuptownStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent17 }}%">{{ Percent17 }}%</div>
+            </div>
+        </div>
+
+        <div>Moon: {{ MoonStars }}/310,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent18 }}%">{{ Percent18 }}%</div>
+            </div>
+        </div>
+
+        <div>Total Stars: {{ TotalStars }}/5,580,000<br>
+            <div class="Progress-Bar">
+                <div class="Progress" style="width: {{ Percent }}%">{{ Percent }}%</div>
+            </div>
+        </div>
+    </div> 
 </body>
 {% endblock %}
