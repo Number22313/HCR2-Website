@@ -2,7 +2,7 @@
 {% block content %}
 <body class="FormPage">
     <div>
-        <!--Displays each distance in the correct cell with images in the first row and column-->
+        <!--Displays each distance in the correct cell with images of maps and vehicles -->
         <table class="adventure-table">
             <tr> <!-- table row for vehicles-->
                 <td></td>
@@ -652,7 +652,7 @@
             </tr>
         </table>
     </div>
-    <div class="form-main"> <!--POST form to submit data to the database-->
+    <div class="form-main" id="form"> <!--POST form to submit data to the database-->
         <div class="content-header">Submit New Distance</div>
         <form method="POST" action="{{url_for('Stats') }}">
             <div class="form">
@@ -768,10 +768,13 @@
     <br>
     <!--Progress bars showing how many stars out of 310,000 that have been achieved-->
     <div class="Completion">
-        <div>Countryside: {{ CountrysideStars }}/310,000
+        <div class="background" style="background-image: url(/static/countryside-background.png);">
+            <div class="header">Countryside</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent1 }}%">{{ Percent1 }}%</div>
             </div>
+            <span>{{ CountrysideStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
         <div class="background" style="background-image: url(/static/forest-background.png);">
@@ -780,7 +783,7 @@
                 <div class="Progress" style="width: {{ Percent2 }}%">{{ Percent2 }}%</div>
             </div>
             <span>{{ ForestStars }}/310,000</span>
-            <a class="link addDistance">Add Distance</a>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
         <div class="background" style="background-image: url(/static/city-background.png);">
@@ -789,22 +792,25 @@
                 <div class="Progress" style="width: {{ Percent3 }}%">{{ Percent3 }}%</div>
             </div>
             <span>{{ CityStars }}/310,000</span>
-            <a class="link addDistance">Add Distance</a>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div class="background" style="background-image: url(/static/mountain-background2.png);">
+        <div class="background" style="background-image: url(/static/mountain-background.png);">
             <div class="header">Mountain</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent4 }}%">{{ Percent4 }}%</div>
             </div>
             <span>{{ MountainStars }}/310,000</span>
-            <a class="link addDistance">Add Distance</a>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Reef: {{ ReefStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/reef-background.png);">
+            <div class="header">Reef</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent5 }}%">{{ Percent5 }}%</div>
             </div>
+            <span>{{ ReefStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
         <div class="background" style="background-image: url(/static/winter-background.png);">
@@ -813,7 +819,7 @@
                 <div class="Progress" style="width: {{ Percent6 }}%">{{ Percent6 }}%</div>
             </div>
             <span>{{ WinterStars }}/310,000</span>
-            <a class="link addDistance">Add Distance</a>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
         <div class="background" style="background-image: url(/static/mines-background.png);">
@@ -822,80 +828,140 @@
                 <div class="Progress" style="width: {{ Percent7 }}%">{{ Percent7 }}%</div>
             </div>
             <span>{{ MinesStars }}/310,000</span>
-            <a class="link addDistance">Add Distance</a>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Desert Valley: {{ DesertvalleyStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/desertvalley-background.png);">
+            <div class="header">Desert Valley</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent8 }}%">{{ Percent8 }}%</div>
             </div>
+            <span>{{ DesertValleyStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Beach: {{ BeachStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/beach-background.png);">
+            <div class="header">Beach</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent9 }}%">{{ Percent9 }}%</div>
             </div>
+            <span>{{ BeachStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Bog: {{ BogStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/bog-background.png);">
+            <div class="header">Bog</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent10 }}%">{{ Percent10 }}%</div>
             </div>
+            <span>{{ BogStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Glacier: {{ GlacierStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/glacier-background.png);">
+            <div class="header">Glacier</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent11 }}%">{{ Percent11 }}%</div>
             </div>
+            <span>{{ GlacierStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Patchwork: {{ PatchworkStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/patchwork-background.png);">
+            <div class="header">Patchwork</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent12 }}%">{{ Percent12 }}%</div>
             </div>
+            <span>{{ PatchworkStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Savanna: {{ SavannaStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/savanna-background.png);">
+            <div class="header">Savanna</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent13 }}%">{{ Percent13 }}%</div>
             </div>
+            <span>{{ SavannaStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Gloomvale: {{ GloomvaleStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/gloomvale-background.png);">
+            <div class="header">Gloomvale</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent14 }}%">{{ Percent14 }}%</div>
             </div>
+            <span>{{ GloomvaleStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Overspill: {{ OverspillStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/overspill-background.png);">
+            <div class="header">Overspill</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent15 }}%">{{ Percent15 }}%</div>
             </div>
+            <span>{{ OverspillStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Canyon Arena: {{ CanyonarenaStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/arena-background.png);">
+            <div class="header">Canyon Arena</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent16 }}%">{{ Percent16 }}%</div>
             </div>
+            <span>{{ CanyonarenaStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Cuptown: {{ CuptownStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/cuptown-background.png);">
+            <div class="header">Cuptown</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent17 }}%">{{ Percent17 }}%</div>
             </div>
+            <span>{{ CuptownStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Moon: {{ MoonStars }}/310,000<br>
+        <div class="background" style="background-image: url(/static/moon-background.png);">
+            <div class="header">Moon</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent18 }}%">{{ Percent18 }}%</div>
             </div>
+            <span>{{ MoonStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
 
-        <div>Total Stars: {{ TotalStars }}/5,580,000<br>
+        <div class="background" style="background-image: url();">
+            <div class="header">Total Stars</div><span>Progress</span>
             <div class="Progress-Bar">
                 <div class="Progress" style="width: {{ Percent }}%">{{ Percent }}%</div>
             </div>
+            <span>{{ TotalStars }}/310,000</span>
+            <a class="link addDistance" href="#form">Add Distance</a>
         </div>
     </div> 
+
+    <div>
+        <table class="DeleteTable">
+            <tr>
+                <td>Map</td>
+                <td>Vehicle</td>
+                <td>Distance</td>
+                <td>Action</td>
+            </tr>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.map }}</td>
+                <td>{{ row.vehicle }}</td>
+                <td>{{ row.distance }}</td>
+                <td>
+                    <!-- Delete a database input -->
+                    <form action="{{ url_for('delete_distance', map_id=row.map_id, vehicle_id=row.vehicle_id) }}" method="post">
+                        <input type="submit" value="Delete" onclick="return confirm('Delete?')">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </body>
 {% endblock %}
